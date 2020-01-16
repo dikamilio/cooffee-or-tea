@@ -3,16 +3,28 @@ import { combineReducers } from 'redux';
 const INITIAL_STATE = {
     current: [],
     possible: [
-        'Allie',
-        'Gator',
-        'Lizzie',
-        'Reptar',
+        {
+            id: '1',
+            name: 'Allie'
+        },
+        {
+            id: '2',
+            name: 'Gator'
+        },
+        {
+            id: '3',
+            name: 'Lizzie'
+        },
+        {
+            id: '4',
+            name: 'Reptar'
+        }
     ],
 };
 
 const friendReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
-        case 'ADD_FRIEND':
+        case 'ADD_DRINK':
             // Pulls current and possible out of previous state
             // We do not want to alter state directly in case
             // another action is altering it at the same time

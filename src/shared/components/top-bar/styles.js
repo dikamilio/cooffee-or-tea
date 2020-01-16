@@ -15,4 +15,7 @@ export default StyleSheet.create({
     cartContainer: {
         overflow: 'hidden',
     },
+    cartView: {
+        flexDirection: 'row'
+    }
 })

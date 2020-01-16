@@ -14,7 +14,7 @@ const Order = () => {
     return (
         <View style={styles.cartContainer}>
             <Text>elo {counter} {possible}</Text>
-            <TouchableOpacity onPress={() => dispatch({type: 'ADD_FRIEND'})}>
+            <TouchableOpacity onPress={() => dispatch({type: 'ADD_DRINK'})}>
                 <Text>Add</Text>
             </TouchableOpacity>
         </View>

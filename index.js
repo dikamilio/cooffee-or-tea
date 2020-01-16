@@ -23,7 +23,11 @@ Navigation.registerComponent(components.MAIN_SCREEN, () => (props) => (
 ), () => HotDrinks);
 Navigation.registerComponent(components.SIDE_MENU, () => SideMenu);
 Navigation.registerComponent(components.STACK_HEADER, () => StackHeader);
-Navigation.registerComponent(components.HEADER_CART, () => Cart);
+Navigation.registerComponent(components.HEADER_CART, () => (props) => (
+    <Provider store = {store}>
+        <Cart {...props}/>
+    </Provider>
+), () => Cart);
 Navigation.registerComponent(components.ORDER, () => (props) => (
     <Provider store = {store}>
         <Order {...props}/>
