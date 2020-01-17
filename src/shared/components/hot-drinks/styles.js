@@ -3,6 +3,7 @@
  */
 
 import {StyleSheet} from 'react-native';
+import colors from "../../style/colors";
 
 export default StyleSheet.create({
     hotDrinksContainer: {
@@ -22,13 +23,13 @@ export default StyleSheet.create({
         marginTop: 12,
     },
     item: {
-        backgroundColor: '#50d8e9',
+        backgroundColor: colors.drinkItem,
         padding: 20,
         marginVertical: 8,
         marginHorizontal: 16,
         borderRadius:10,
         borderWidth: 1,
-        borderColor: '#fff'
+        borderColor: colors.white
     },
     title: {
         fontSize: 26,

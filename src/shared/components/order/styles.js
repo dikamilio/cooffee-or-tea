@@ -3,6 +3,7 @@
  */
 
 import {StyleSheet} from 'react-native';
+import colors from "../../style/colors";
 
 export default StyleSheet.create({
     cartContainer: {
@@ -18,22 +19,22 @@ export default StyleSheet.create({
         fontWeight: 'bold'
     },
     item: {
-        backgroundColor: '#50d8e9',
+        backgroundColor: colors.drinkItem,
         padding: 20,
         marginVertical: 8,
         marginHorizontal: 16,
         borderRadius:10,
         borderWidth: 1,
-        borderColor: '#fff'
+        borderColor: colors.white
     },
     itemPrepared: {
-        backgroundColor: '#30e961',
+        backgroundColor: colors.drinkOrdered,
         padding: 20,
         marginVertical: 8,
         marginHorizontal: 16,
         borderRadius:10,
         borderWidth: 1,
-        borderColor: '#fff'
+        borderColor: colors.white
     },
     row: {
         flex: 1,
