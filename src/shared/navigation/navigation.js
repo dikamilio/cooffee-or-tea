@@ -1,6 +1,9 @@
+/*
+ * Copyright (c) 2020. Kamil Łukowski
+ */
+
 import {Navigation} from 'react-native-navigation';
 import {components} from "./component-constants";
-
 
 const setDefaultNavigationOptions = () => {
     Navigation.setDefaultOptions({
@@ -10,9 +13,6 @@ const setDefaultNavigationOptions = () => {
         topBar: {
             elevation: 0,
             noBorder: true,
-            // leftButtons: [
-            //     //{id: 'account', icon: icons.burgerMenu, color: colors.blue},
-            // ],
             title: {
                 component: {
                     id: components.STACK_HEADER,
@@ -58,7 +58,6 @@ const setRoot = () => {
 };
 
 function navigateToOrder() {
-    alert('elo');
     Navigation.push(components.MAIN_SCREEN, {
         component: {
             name: components.ORDER,

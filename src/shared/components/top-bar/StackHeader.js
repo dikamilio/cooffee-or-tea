@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2020. Kamil Łukowski
+ */
+
 import React from "react";
 import {
     SafeAreaView,

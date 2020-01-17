@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2020. Kamil Łukowski
+ */
+
 import React from "react";
 import {
     View,
@@ -12,7 +16,11 @@ import {useSelector} from "react-redux";
 
 
 const Cart = () => {
-    const counter = useSelector(state => state.friends.current.length);
+    function reducer(total, drink) {
+        return total + drink.counter;
+    }
+    //TODO use reselect
+    const counter = useSelector(state => state.drinks.current.reduce(reducer, 0));
     return (
         <View style={styles.cartContainer}>
             <TouchableOpacity onPress={() => navigateToOrder()}>

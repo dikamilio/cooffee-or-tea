@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2020. Kamil Łukowski
+ */
+
 import {StyleSheet} from 'react-native';
 import colors from "../../style/colors";
 

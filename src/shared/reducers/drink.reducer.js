@@ -1,53 +1,73 @@
-import { combineReducers } from 'redux';
+/*
+ * Copyright (c) 2020. Kamil Łukowski
+ */
+
+import {combineReducers} from 'redux';
 
 const INITIAL_STATE = {
     current: [],
     possible: [
         {
             id: '1',
-            name: 'Allie'
+            name: 'Black Coffee'
         },
         {
             id: '2',
-            name: 'Gator'
+            name: 'Cafe au lait'
         },
         {
             id: '3',
-            name: 'Lizzie'
+            name: 'Coffee with milk'
         },
         {
             id: '4',
-            name: 'Reptar'
+            name: 'Espresso'
+        },
+        {
+            id: '5',
+            name: 'Instant coffee'
         }
     ],
 };
 
-const friendReducer = (state = INITIAL_STATE, action) => {
+const drinkReducer = (state = INITIAL_STATE, action) => {
+    const {
+        current,
+    } = state;
     switch (action.type) {
         case 'ADD_DRINK':
-            // Pulls current and possible out of previous state
-            // We do not want to alter state directly in case
-            // another action is altering it at the same time
-            const {
-                current,
-                possible,
-            } = state;
 
-            // Pull friend out of friends.possible
-            // Note that action.payload === friendIndex
-            const addedFriend = possible.splice(action.payload, 1);
+            const addedDrink = action.payload;
+            let addedIndex = current.findIndex((obj => obj.id == addedDrink.id));
+            let updated;
+            if (addedIndex >= 0) {
+                current[addedIndex].counter = current[addedIndex].counter + 1;
+                updated = current;
+            } else {
+                addedDrink.counter = 1;
+                addedDrink.prepared = false;
+                updated = current.concat(addedDrink);
+            }
+            return {...state, current: updated};
+        case 'EMPTY_CART':
+            return {...state, current: []};
+        case 'DRINK_PREPARED':
 
-            // And put friend in friends.current
-            current.push(addedFriend);
+            let preparedDrink = action.payload;
+            let preparedIndex = current.findIndex((obj => obj.id == preparedDrink.id));
+            let prepared = [];
+            if (preparedIndex >= 0) {
+                current[preparedIndex].prepared = !current[preparedIndex].prepared;
+                Object.assign(prepared, current);
+            }
+            return {...state, current: prepared};
 
-            // Finally, update our redux state
-            const newState = { current, possible };
-            return newState;
+
         default:
             return state
     }
 };
 
 export default combineReducers({
-    friends: friendReducer,
+    drinks: drinkReducer,
 });

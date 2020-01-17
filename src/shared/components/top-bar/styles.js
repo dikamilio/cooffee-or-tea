@@ -1,9 +1,14 @@
+/*
+ * Copyright (c) 2020. Kamil Łukowski
+ */
+
 import {StyleSheet} from 'react-native';
 import colors from "../../style/colors";
 
 export default StyleSheet.create({
     stackHeaderContainer: {
         overflow: 'hidden',
+        width: 200
     },
     stackHeaderTitle: {
         fontSize: 24,
@@ -13,9 +18,10 @@ export default StyleSheet.create({
         fontWeight: 'bold',
     },
     cartContainer: {
-        overflow: 'hidden',
+        overflow: 'hidden'
     },
     cartView: {
-        flexDirection: 'row'
+        flexDirection: 'row',
+        overflow: 'hidden'
     }
 })

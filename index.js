@@ -13,7 +13,7 @@ import Order from "./src/shared/components/order/Order";
 import HotDrinks from "./src/shared/components/hot-drinks/HotDrinks";
 import {Provider} from "react-redux";
 import {store} from "./src/shared/store/store";
-import App from "./App";
+import CartEmpty from "./src/shared/components/top-bar/CartEmpty";
 
 
 Navigation.registerComponent(components.MAIN_SCREEN, () => (props) => (
@@ -23,6 +23,11 @@ Navigation.registerComponent(components.MAIN_SCREEN, () => (props) => (
 ), () => HotDrinks);
 Navigation.registerComponent(components.SIDE_MENU, () => SideMenu);
 Navigation.registerComponent(components.STACK_HEADER, () => StackHeader);
+Navigation.registerComponent(components.HEADER_CART_EMPTY, () => (props) => (
+    <Provider store = {store}>
+        <CartEmpty {...props}/>
+    </Provider>
+), () => CartEmpty);
 Navigation.registerComponent(components.HEADER_CART, () => (props) => (
     <Provider store = {store}>
         <Cart {...props}/>
