@@ -9,7 +9,7 @@ const INITIAL_STATE = {
     possible: [
         {
             id: '1',
-            name: 'Black Coffee'
+            name: 'Black coffee'
         },
         {
             id: '2',
@@ -26,7 +26,23 @@ const INITIAL_STATE = {
         {
             id: '5',
             name: 'Instant coffee'
-        }
+        },
+        {
+            id: '6',
+            name: 'Black tea'
+        },
+        {
+            id: '7',
+            name: 'Grean tea'
+        },
+        {
+            id: '8',
+            name: 'Flavored tea'
+        },
+        {
+            id: '9',
+            name: 'White tea'
+        },
     ],
 };
 
