@@ -2,17 +2,41 @@
  * Copyright (c) 2020. Kamil Łukowski
  */
 
-import {Text, View, TouchableOpacity} from "react-native";
+import {Text, Animated, TouchableOpacity} from "react-native";
 import styles from "./styles";
-import React from "react";
+import React, {useState} from "react";
 
 const ListItem = (props) => {
+
+    const [fadeAnim] = useState(new Animated.Value(1))
+
+    const onPress = () => {
+        Animated.sequence([
+            Animated.timing(
+                fadeAnim,
+                {
+                    toValue: 0,
+                    duration: 200,
+                }
+            ),
+            Animated.timing(
+                fadeAnim,
+                {
+                    toValue: 1,
+                    duration: 200,
+                }
+            )
+        ]).start();
+        props.onPress();
+    };
+
+
     return (
-        <View style={styles.item}>
-            <TouchableOpacity onPress={() => props.onPress()}>
+        <Animated.View style={{...styles.item, opacity: fadeAnim}}>
+            <TouchableOpacity onPress={() => onPress()}>
                 <Text style={styles.title}>{props.drink.name}</Text>
             </TouchableOpacity>
-        </View>
+        </Animated.View>
     );
 };
 

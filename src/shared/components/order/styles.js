@@ -12,7 +12,10 @@ export default StyleSheet.create({
     orderLabel: {
         paddingHorizontal: 20,
         paddingVertical: 20,
-        width: '100%'
+        borderRadius:10,
+        borderWidth: 1,
+        borderColor: colors.defaultBorder,
+        marginHorizontal: 10
     },
     orderText: {
         fontSize: 16,
