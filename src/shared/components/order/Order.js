@@ -18,6 +18,7 @@ const Order = (props) => {
     const current = useSelector(state => state.drinks.current);
     const dispatch = useDispatch();
 
+    //Runs only once because props.componentId wont change, cleanup not needed
     React.useEffect(() => {
         Navigation.mergeOptions(props.componentId, {
             topBar: {
