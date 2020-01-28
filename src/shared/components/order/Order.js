@@ -29,7 +29,7 @@ const Order = (props) => {
                 }]
             }
         })
-    }, []);
+    }, [props.componentId]);
 
     return (
         <View style={styles.cartContainer}>
